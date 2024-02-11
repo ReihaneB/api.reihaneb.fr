@@ -1,7 +1,8 @@
 {
   "collectionName": "components_media_image_descriptions",
   "info": {
-    "displayName": "ImageDescription"
+    "displayName": "ImageDescription",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,11 +11,15 @@
       "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
       "required": true
     }
   }
