@@ -386,10 +386,9 @@ export interface ApiWorkWork extends Schema.CollectionType {
     projectUrl: Attribute.String;
     presentationImage: Attribute.Media & Attribute.Required;
     companyDescription: Attribute.Text & Attribute.Required;
-    stack: Attribute.Component<'object.list-stack-category', true>;
-    wireframes: Attribute.Component<'array.image-list', true>;
-    deliverables: Attribute.Component<'array.array-of-strings', true>;
-    feedback: Attribute.Component<'object.simple-object', true>;
+    wireframes: Attribute.Component<'media.gallery-block', true>;
+    deliverables: Attribute.Component<'content.string-list', true>;
+    feedback: Attribute.Component<'media.gallery-block', true>;
     contractType: Attribute.Enumeration<['CDI', 'Freelance']> &
       Attribute.Required &
       Attribute.DefaultTo<'CDI'>;
