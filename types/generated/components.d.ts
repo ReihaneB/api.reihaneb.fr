@@ -1,21 +1,11 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ArrayArrayOfObjects extends Schema.Component {
-  collectionName: 'components_array_array_of_objects';
+export interface ContentStringList extends Schema.Component {
+  collectionName: 'components_content_string_list';
   info: {
-    displayName: 'arrayOfObjects';
-    description: '';
-  };
-  attributes: {
-    listStackCategory: Attribute.Component<'object.icon-tag', true>;
-  };
-}
-
-export interface ArrayArrayOfStrings extends Schema.Component {
-  collectionName: 'components_array_array_of_strings';
-  info: {
-    displayName: 'arrayOfStrings';
+    displayName: 'StringList';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -116,6 +106,7 @@ declare module '@strapi/types' {
       'object.list-stack-category': ObjectListStackCategory;
       'object.simple-object': ObjectSimpleObject;
       'object.stack-category': ObjectStackCategory;
+      'content.string-list': ContentStringList;
       'media.gallery-block': MediaGalleryBlock;
       'media.media-block': MediaMediaBlock;
       'tag-category.icon-label-tag': TagCategoryIconLabelTag;

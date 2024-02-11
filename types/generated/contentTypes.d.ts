@@ -376,7 +376,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
   attributes: {
     projectName: Attribute.String & Attribute.Required;
     role: Attribute.String & Attribute.Required;
-    generalStack: Attribute.Component<'array.array-of-strings', true> &
+    generalStack: Attribute.Component<'content.string-list', true> &
       Attribute.SetMinMax<
         {
           max: 4;
