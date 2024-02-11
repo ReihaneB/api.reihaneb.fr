@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "works",
+  "info": {
+    "singularName": "work",
+    "pluralName": "works",
+    "displayName": "Work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project_title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "job_title": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": true
+    },
+    "main_stack": {
+      "displayName": "stringList",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {},
+      "component": "content.string-list",
+      "max": 4
+    },
+    "project_url": {
+      "pluginOptions": {},
+      "type": "string",
+      "required": false
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {}
+    },
+    "company_description": {
+      "pluginOptions": {},
+      "type": "text",
+      "required": true
+    },
+    "objective": {
+      "displayName": "ImageDescription",
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image-description",
+      "required": true
+    },
+    "full_stack": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "tag-category.stack-overview"
+    },
+    "project_images": {
+      "displayName": "galleryBlock",
+      "type": "component",
+      "repeatable": true,
+      "component": "media.gallery-block",
+      "required": true
+    },
+    "deliverables": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content.string-list"
+    },
+    "feedback": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.gallery-block"
+    },
+    "contract_type": {
+      "type": "enumeration",
+      "enum": [
+        "CDI",
+        "Freelance"
+      ],
+      "default": "CDI",
+      "required": true
+    }
+  }
+}
