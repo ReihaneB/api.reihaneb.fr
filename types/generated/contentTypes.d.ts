@@ -377,6 +377,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
     project_title: Attribute.String & Attribute.Required;
     job_title: Attribute.String & Attribute.Required;
     main_stack: Attribute.Component<'content.string-list', true> &
+      Attribute.Required &
       Attribute.SetMinMax<
         {
           max: 4;
@@ -385,7 +386,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
       >;
     project_url: Attribute.String;
     featured_image: Attribute.Media & Attribute.Required;
-    company_description: Attribute.Text & Attribute.Required;
+    company_description: Attribute.Text;
     objective: Attribute.Component<'media.image-description'> &
       Attribute.Required;
     full_stack: Attribute.Component<'tag-category.stack-overview', true> &

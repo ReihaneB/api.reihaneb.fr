@@ -10,10 +10,12 @@
     "tag": {
       "type": "component",
       "repeatable": true,
-      "component": "tag-category.icon-label-tag"
+      "component": "tag-category.icon-label-tag",
+      "required": true
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

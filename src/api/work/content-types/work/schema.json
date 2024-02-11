@@ -29,7 +29,8 @@
       "repeatable": true,
       "pluginOptions": {},
       "component": "content.string-list",
-      "max": 4
+      "max": 4,
+      "required": true
     },
     "project_url": {
       "pluginOptions": {},
@@ -48,7 +49,7 @@
     "company_description": {
       "pluginOptions": {},
       "type": "text",
-      "required": true
+      "required": false
     },
     "objective": {
       "displayName": "ImageDescription",
