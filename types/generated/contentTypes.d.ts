@@ -374,22 +374,27 @@ export interface ApiWorkWork extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    projectName: Attribute.String & Attribute.Required;
-    role: Attribute.String & Attribute.Required;
-    generalStack: Attribute.Component<'content.string-list', true> &
+    project_title: Attribute.String & Attribute.Required;
+    job_title: Attribute.String & Attribute.Required;
+    main_stack: Attribute.Component<'content.string-list', true> &
       Attribute.SetMinMax<
         {
           max: 4;
         },
         number
       >;
-    projectUrl: Attribute.String;
-    presentationImage: Attribute.Media & Attribute.Required;
-    companyDescription: Attribute.Text & Attribute.Required;
-    wireframes: Attribute.Component<'media.gallery-block', true>;
+    project_url: Attribute.String;
+    featured_image: Attribute.Media & Attribute.Required;
+    company_description: Attribute.Text & Attribute.Required;
+    objective: Attribute.Component<'media.image-description'> &
+      Attribute.Required;
+    full_stack: Attribute.Component<'tag-category.stack-overview', true> &
+      Attribute.Required;
+    project_images: Attribute.Component<'media.gallery-block', true> &
+      Attribute.Required;
     deliverables: Attribute.Component<'content.string-list', true>;
     feedback: Attribute.Component<'media.gallery-block', true>;
-    contractType: Attribute.Enumeration<['CDI', 'Freelance']> &
+    contract_type: Attribute.Enumeration<['CDI', 'Freelance']> &
       Attribute.Required &
       Attribute.DefaultTo<'CDI'>;
     createdAt: Attribute.DateTime;

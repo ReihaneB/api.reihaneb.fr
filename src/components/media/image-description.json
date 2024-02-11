@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_media_image_descriptions",
+  "info": {
+    "displayName": "ImageDescription"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
