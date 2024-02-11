@@ -24,8 +24,11 @@ export interface ArrayArrayOfStrings extends Schema.Component {
 
 export interface ArrayImageList extends Schema.Component {
   collectionName: 'components_array_image_lists';
+export interface MediaGalleryBlock extends Schema.Component {
+  collectionName: 'components_media_gallery_block';
   info: {
-    displayName: 'imageList';
+    displayName: 'GalleryBlock';
+    description: '';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
@@ -35,13 +38,17 @@ export interface ArrayImageList extends Schema.Component {
 
 export interface ObjectIconTag extends Schema.Component {
   collectionName: 'components_object_icon_tags';
+export interface MediaMediaBlock extends Schema.Component {
+  collectionName: 'components_media_media_block';
   info: {
-    displayName: 'iconTag';
+    displayName: 'MediaBlock';
+    icon: '';
     description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    icon: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -109,6 +116,8 @@ declare module '@strapi/types' {
       'object.list-stack-category': ObjectListStackCategory;
       'object.simple-object': ObjectSimpleObject;
       'object.stack-category': ObjectStackCategory;
+      'media.gallery-block': MediaGalleryBlock;
+      'media.media-block': MediaMediaBlock;
       'tag-category.icon-label-tag': TagCategoryIconLabelTag;
       'tag-category.stack-category': TagCategoryStackCategory;
       'tag-category.stack-overview': TagCategoryStackOverview;
