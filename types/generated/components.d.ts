@@ -24,6 +24,17 @@ export interface MediaGalleryBlock extends Schema.Component {
   };
 }
 
+export interface MediaImageDescription extends Schema.Component {
+  collectionName: 'components_media_image_descriptions';
+  info: {
+    displayName: 'ImageDescription';
+  };
+  attributes: {
+    description: Attribute.Text & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface MediaMediaBlock extends Schema.Component {
   collectionName: 'components_media_media_block';
   info: {
@@ -81,6 +92,7 @@ declare module '@strapi/types' {
     export interface Components {
       'content.string-list': ContentStringList;
       'media.gallery-block': MediaGalleryBlock;
+      'media.image-description': MediaImageDescription;
       'media.media-block': MediaMediaBlock;
       'tag-category.icon-label-tag': TagCategoryIconLabelTag;
       'tag-category.stack-category': TagCategoryStackCategory;
