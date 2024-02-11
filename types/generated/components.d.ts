@@ -28,10 +28,12 @@ export interface MediaImageDescription extends Schema.Component {
   collectionName: 'components_media_image_descriptions';
   info: {
     displayName: 'ImageDescription';
+    description: '';
   };
   attributes: {
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
   };
 }
 
