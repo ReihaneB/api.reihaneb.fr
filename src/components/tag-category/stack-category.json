@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_tag-category_stack_categories",
+  "info": {
+    "displayName": "StackCategories",
+    "description": "",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tag-category.icon-label-tag"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_tag-category_icon_label_tags",
+  "info": {
+    "displayName": "IconLabelTag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

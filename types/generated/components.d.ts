@@ -47,39 +47,55 @@ export interface ObjectIconTag extends Schema.Component {
 
 export interface ObjectListStackCategory extends Schema.Component {
   collectionName: 'components_object_list_stack_categories';
+export interface TagCategoryIconLabelTag extends Schema.Component {
+  collectionName: 'components_tag-category_icon_label_tags';
   info: {
     displayName: 'listStackCategory';
+    displayName: 'IconLabelTag';
     description: '';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
     tag: Attribute.Component<'object.stack-category', true> &
       Attribute.Required;
+    label: Attribute.String & Attribute.Required;
+    icon: Attribute.Media & Attribute.Required;
   };
 }
 
 export interface ObjectSimpleObject extends Schema.Component {
-  collectionName: 'components_object_simple_objects';
+export interface TagCategoryStackCategory extends Schema.Component {
+  collectionName: 'components_tag-category_stack_categories';
   info: {
     displayName: 'simpleObject';
-    icon: '';
+    displayName: 'StackCategories';
     description: '';
+    icon: 'layer';
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     image: Attribute.Media & Attribute.Required;
+    tag: Attribute.Component<'tag-category.icon-label-tag', true>;
+    name: Attribute.String;
   };
 }
 
 export interface ObjectStackCategory extends Schema.Component {
   collectionName: 'components_object_stack_categories';
+export interface TagCategoryStackOverview extends Schema.Component {
+  collectionName: 'components_tag-category_stack_overview';
   info: {
     displayName: 'stackCategory';
+    displayName: 'StackOverview';
+    description: '';
   };
   attributes: {
     tag: Attribute.Component<'object.icon-tag', true>;
     name: Attribute.String;
+    name: Attribute.String & Attribute.Required;
+    tag: Attribute.Component<'tag-category.stack-category', true> &
+      Attribute.Required;
   };
 }
 
@@ -93,6 +109,9 @@ declare module '@strapi/types' {
       'object.list-stack-category': ObjectListStackCategory;
       'object.simple-object': ObjectSimpleObject;
       'object.stack-category': ObjectStackCategory;
+      'tag-category.icon-label-tag': TagCategoryIconLabelTag;
+      'tag-category.stack-category': TagCategoryStackCategory;
+      'tag-category.stack-overview': TagCategoryStackOverview;
     }
   }
 }
