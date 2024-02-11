@@ -8,7 +8,7 @@ export interface ContentStringList extends Schema.Component {
     description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
+    name: Attribute.String;
   };
 }
 
@@ -19,8 +19,8 @@ export interface MediaGalleryBlock extends Schema.Component {
     description: '';
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    images: Attribute.Media & Attribute.Required;
+    name: Attribute.String;
+    images: Attribute.Media;
   };
 }
 
@@ -69,8 +69,9 @@ export interface TagCategoryStackCategory extends Schema.Component {
     icon: 'layer';
   };
   attributes: {
-    tag: Attribute.Component<'tag-category.icon-label-tag', true>;
-    name: Attribute.String;
+    tag: Attribute.Component<'tag-category.icon-label-tag', true> &
+      Attribute.Required;
+    name: Attribute.String & Attribute.Required;
   };
 }
 
