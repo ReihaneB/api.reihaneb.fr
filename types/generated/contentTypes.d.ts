@@ -362,52 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiWorkWork extends Schema.CollectionType {
-  collectionName: 'works';
-  info: {
-    singularName: 'work';
-    pluralName: 'works';
-    displayName: 'Work';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    project_title: Attribute.String & Attribute.Required;
-    job_title: Attribute.String & Attribute.Required;
-    main_stack: Attribute.Component<'content.string-list', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<
-        {
-          max: 4;
-        },
-        number
-      >;
-    project_url: Attribute.String;
-    featured_image: Attribute.Media & Attribute.Required;
-    company_description: Attribute.Text;
-    objective: Attribute.Component<'media.image-description'> &
-      Attribute.Required;
-    full_stack: Attribute.Component<'tag-category.stack-overview', true> &
-      Attribute.Required;
-    project_images: Attribute.Component<'media.gallery-block', true> &
-      Attribute.Required;
-    deliverables: Attribute.Component<'content.string-list', true>;
-    feedback: Attribute.Component<'media.gallery-block', true>;
-    contract_type: Attribute.Enumeration<['CDI', 'Freelance']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'CDI'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -827,6 +781,82 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiSocialSocial extends Schema.SingleType {
+  collectionName: 'socials';
+  info: {
+    singularName: 'social';
+    pluralName: 'socials';
+    displayName: 'Social';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Socials: Attribute.Component<'content.social', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social.social',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWorkWork extends Schema.CollectionType {
+  collectionName: 'works';
+  info: {
+    singularName: 'work';
+    pluralName: 'works';
+    displayName: 'Work';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    project_title: Attribute.String & Attribute.Required;
+    job_title: Attribute.String & Attribute.Required;
+    main_stack: Attribute.Component<'content.string-list', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    project_url: Attribute.String;
+    featured_image: Attribute.Media & Attribute.Required;
+    company_description: Attribute.Text;
+    objective: Attribute.Component<'media.image-description'> &
+      Attribute.Required;
+    full_stack: Attribute.Component<'tag-category.stack-overview', true> &
+      Attribute.Required;
+    project_images: Attribute.Component<'media.gallery-block', true> &
+      Attribute.Required;
+    deliverables: Attribute.Component<'content.string-list', true>;
+    feedback: Attribute.Component<'media.gallery-block', true>;
+    contract_type: Attribute.Enumeration<['CDI', 'Freelance']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'CDI'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::work.work', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -837,7 +867,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::work.work': ApiWorkWork;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -846,6 +875,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::social.social': ApiSocialSocial;
+      'api::work.work': ApiWorkWork;
     }
   }
 }
