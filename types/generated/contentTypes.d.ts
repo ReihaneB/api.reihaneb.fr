@@ -847,6 +847,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
     contract_type: Attribute.Enumeration<['CDI', 'Freelance']> &
       Attribute.Required &
       Attribute.DefaultTo<'CDI'>;
+    slug: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

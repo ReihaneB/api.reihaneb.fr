@@ -89,6 +89,10 @@
       ],
       "default": "CDI",
       "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
     }
   }
 }
