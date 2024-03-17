@@ -10,7 +10,7 @@
       "type": "string",
       "required": true
     },
-    "tag": {
+    "stack_category": {
       "type": "component",
       "repeatable": true,
       "component": "tag-category.stack-category",

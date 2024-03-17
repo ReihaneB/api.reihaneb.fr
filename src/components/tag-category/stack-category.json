@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "tag": {
+    "tags": {
       "type": "component",
       "repeatable": true,
       "component": "tag-category.icon-label-tag",
