@@ -84,7 +84,7 @@ export interface TagCategoryStackCategory extends Schema.Component {
     icon: 'layer';
   };
   attributes: {
-    tag: Attribute.Component<'tag-category.icon-label-tag', true> &
+    tags: Attribute.Component<'tag-category.icon-label-tag', true> &
       Attribute.Required;
     name: Attribute.String & Attribute.Required;
   };
@@ -98,7 +98,7 @@ export interface TagCategoryStackOverview extends Schema.Component {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    tag: Attribute.Component<'tag-category.stack-category', true> &
+    stack_category: Attribute.Component<'tag-category.stack-category', true> &
       Attribute.Required;
   };
 }
