@@ -4,10 +4,11 @@ export interface ContentSocial extends Schema.Component {
   collectionName: 'components_content_socials';
   info: {
     displayName: 'Social';
+    description: '';
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    icon: Attribute.Media;
+    icon: Attribute.Media & Attribute.Required;
     url: Attribute.String;
   };
 }
@@ -32,7 +33,7 @@ export interface MediaGalleryBlock extends Schema.Component {
   };
   attributes: {
     name: Attribute.String;
-    images: Attribute.Media;
+    images: Attribute.Media & Attribute.Required;
   };
 }
 
