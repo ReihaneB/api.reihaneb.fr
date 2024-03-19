@@ -788,6 +788,40 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutMeAboutMe extends Schema.SingleType {
+  collectionName: 'about_mes';
+  info: {
+    singularName: 'about-me';
+    pluralName: 'about-mes';
+    displayName: 'About me';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    profile_picture: Attribute.Media & Attribute.Required;
+    job_title: Attribute.String & Attribute.Required;
+    name: Attribute.Text & Attribute.Required;
+    description: Attribute.Component<'content.about-me-description'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-me.about-me',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-me.about-me',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialSocial extends Schema.SingleType {
   collectionName: 'socials';
   info: {
@@ -884,6 +918,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-me.about-me': ApiAboutMeAboutMe;
       'api::social.social': ApiSocialSocial;
       'api::work.work': ApiWorkWork;
     }

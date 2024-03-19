@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ContentAboutMeDescription extends Schema.Component {
+  collectionName: 'components_content_about_me_descriptions';
+  info: {
+    displayName: 'about-me-description';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Text & Attribute.Required;
+  };
+}
+
 export interface ContentSocial extends Schema.Component {
   collectionName: 'components_content_socials';
   info: {
@@ -106,6 +117,7 @@ export interface TagCategoryStackOverview extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'content.about-me-description': ContentAboutMeDescription;
       'content.social': ContentSocial;
       'content.string-list': ContentStringList;
       'media.gallery-block': MediaGalleryBlock;

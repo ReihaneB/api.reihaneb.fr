@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_content_about_me_descriptions",
+  "info": {
+    "displayName": "about-me-description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
