@@ -10,14 +10,15 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "pg": "8.8.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
+    "@strapi-community/strapi-provider-upload-google-cloud-storage": "^4.10.5",
     "@strapi/plugin-cloud": "4.20.5",
     "@strapi/plugin-i18n": "4.20.5",
     "@strapi/plugin-users-permissions": "4.20.5",
     "@strapi/strapi": "4.20.5",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
     "strapi-plugin-populate-deep": "^3.0.1",
     "styled-components": "5.3.3"
   },
