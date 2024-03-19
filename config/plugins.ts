@@ -8,8 +8,7 @@ export default () => ({
     config: {
       provider: '@strapi-community/strapi-provider-upload-google-cloud-storage',
       providerOptions: {
-          bucketName: process.env.GCS_BUCKET_NAME,
-          baseUrl: process.env.GCS_BASE_URL,
+        bucketName: process.env.GCS_BUCKET_NAME,
       },
     },
   },
