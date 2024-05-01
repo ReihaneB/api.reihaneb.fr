@@ -18,6 +18,10 @@
         "images",
         "videos"
       ]
+    },
+    "description": {
+      "type": "text",
+      "required": false
     }
   }
 }
