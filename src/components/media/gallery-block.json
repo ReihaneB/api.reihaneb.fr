@@ -20,7 +20,8 @@
       ]
     },
     "description": {
-      "type": "blocks"
+      "type": "text",
+      "required": false
     }
   }
 }
