@@ -45,7 +45,7 @@ export interface MediaGalleryBlock extends Schema.Component {
   attributes: {
     name: Attribute.String;
     images: Attribute.Media & Attribute.Required;
-    description: Attribute.Text;
+    description: Attribute.Blocks;
   };
 }
 
