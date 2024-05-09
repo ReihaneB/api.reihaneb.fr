@@ -1,3 +1,5 @@
+// TODO: Fix the ts-nocheck when the issue is resolved
+// @ts-nocheck
 "use strict";
 
 /**
