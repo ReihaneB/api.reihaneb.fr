@@ -794,6 +794,7 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
     singularName: 'about-me';
     pluralName: 'about-mes';
     displayName: 'About me';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -804,6 +805,7 @@ export interface ApiAboutMeAboutMe extends Schema.SingleType {
     name: Attribute.Text & Attribute.Required;
     description: Attribute.Component<'content.about-me-description'> &
       Attribute.Required;
+    meta: Attribute.Component<'meta.meta-tags'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -916,7 +918,8 @@ export interface ApiWorkWork extends Schema.CollectionType {
     contract_type: Attribute.Enumeration<['CDI', 'Freelance']> &
       Attribute.Required &
       Attribute.DefaultTo<'CDI'>;
-    slug: Attribute.String & Attribute.Required;
+    meta: Attribute.Component<'meta.meta-tags'> & Attribute.Required;
+    slug: Attribute.UID<'api::work.work', 'project_title'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

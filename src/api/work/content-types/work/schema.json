@@ -90,8 +90,15 @@
       "default": "CDI",
       "required": true
     },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.meta-tags",
+      "required": true
+    },
     "slug": {
-      "type": "string",
+      "type": "uid",
+      "targetField": "project_title",
       "required": true
     }
   }
