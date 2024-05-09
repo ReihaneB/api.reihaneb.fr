@@ -836,7 +836,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     slug: Attribute.UID<'api::blog.blog', 'title'> & Attribute.Required;
-    featured_image: Attribute.Media;
+    featured_image: Attribute.Media & Attribute.Required;
     content: Attribute.Blocks & Attribute.Required;
     meta: Attribute.Component<'meta.meta-tags'>;
     createdAt: Attribute.DateTime;
