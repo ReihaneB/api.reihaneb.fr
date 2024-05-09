@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_meta_meta_tags",
+  "info": {
+    "displayName": "meta tags",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "robots": {
+      "type": "enumeration",
+      "enum": [
+        "index, follow",
+        "index, nofollow",
+        "noindex, nofollow"
+      ],
+      "default": "index, follow"
+    }
+  }
+}

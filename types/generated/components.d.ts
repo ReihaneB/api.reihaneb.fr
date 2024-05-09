@@ -76,6 +76,22 @@ export interface MediaMediaBlock extends Schema.Component {
   };
 }
 
+export interface MetaMetaTags extends Schema.Component {
+  collectionName: 'components_meta_meta_tags';
+  info: {
+    displayName: 'meta tags';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    robots: Attribute.Enumeration<
+      ['index, follow', 'index, nofollow', 'noindex, nofollow']
+    > &
+      Attribute.DefaultTo<'index, follow'>;
+  };
+}
+
 export interface TagCategoryIconLabelTag extends Schema.Component {
   collectionName: 'components_tag-category_icon_label_tags';
   info: {
@@ -124,6 +140,7 @@ declare module '@strapi/types' {
       'media.gallery-block': MediaGalleryBlock;
       'media.image-description': MediaImageDescription;
       'media.media-block': MediaMediaBlock;
+      'meta.meta-tags': MetaMetaTags;
       'tag-category.icon-label-tag': TagCategoryIconLabelTag;
       'tag-category.stack-category': TagCategoryStackCategory;
       'tag-category.stack-overview': TagCategoryStackOverview;
