@@ -4,7 +4,7 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "Blog",
+    "displayName": "Blog Article",
     "description": ""
   },
   "options": {
@@ -20,6 +20,10 @@
     "slug": {
       "type": "uid",
       "targetField": "title",
+      "required": true
+    },
+    "read_time": {
+      "type": "integer",
       "required": true
     },
     "featured_image": {
@@ -38,6 +42,17 @@
       "type": "component",
       "repeatable": false,
       "component": "meta.meta-tags"
+    },
+    "blog_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::blog-category.blog-category"
+    },
+    "color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
     }
   }
 }
