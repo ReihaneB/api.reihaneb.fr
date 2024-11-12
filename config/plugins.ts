@@ -1,4 +1,4 @@
-export default () => ({
+export default ({ env }) => ({
   'strapi-plugin-populate-deep': {
     config: {
       defaultDepth: 10, // Default is 5
@@ -6,10 +6,13 @@ export default () => ({
   },
   upload: {
     config: {
-      provider: '@strapi-community/strapi-provider-upload-google-cloud-storage',
+      provider: "strapi-provider-upload-supabase",
       providerOptions: {
-        bucketName: process.env.GCS_BUCKET_NAME,
-      },
+        apiUrl: env('SUPABASE_API_URL'),
+        apiKey: env('SUPABASE_API_KEY'),
+        bucket: env('SUPABASE_BUCKET'),
+        directory: env('SUPABASE_DIRECTORY'),
+      }
     },
-  },
+  }, 
 });

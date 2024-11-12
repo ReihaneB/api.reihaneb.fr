@@ -1,4 +1,4 @@
-export default [
+export default ({ env }) => [
   'strapi::logger',
   'strapi::errors',
   {
@@ -7,9 +7,10 @@ export default [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'storage.googleapis.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'storage.googleapis.com'],
+          'connect-src': ["'self'", 'https:', 'http:'],
+          'default-src': ["'self'"],
+          'img-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SUPABASE_API_URL'),],
+          'media-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SUPABASE_API_URL')],
           upgradeInsecureRequests: null,
         },
       },
