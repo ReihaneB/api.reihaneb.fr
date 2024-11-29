@@ -8,9 +8,8 @@ export default ({ env }) => [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:', 'http:'],
-          'default-src': ["'self'"],
-          'img-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SUPABASE_API_URL'),],
-          'media-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SUPABASE_API_URL')],
+          'img-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SCALEWAY_ENDPOINT'), env('SCALEWAY_ENDPOINT_BUCKET')],
+          'media-src': ["'self'", 'data:', 'blob:', "market-assets.strapi.io", env('SCALEWAY_ENDPOINT'), env('SCALEWAY_ENDPOINT_BUCKET')],
           upgradeInsecureRequests: null,
         },
       },

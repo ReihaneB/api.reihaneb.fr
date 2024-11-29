@@ -6,13 +6,18 @@ export default ({ env }) => ({
   },
   upload: {
     config: {
-      provider: "strapi-provider-upload-supabase",
+      provider: 'aws-s3',
       providerOptions: {
-        apiUrl: env('SUPABASE_API_URL'),
-        apiKey: env('SUPABASE_API_KEY'),
-        bucket: env('SUPABASE_BUCKET'),
-        directory: env('SUPABASE_DIRECTORY'),
-      }
+        credentials: {
+          accessKeyId: env('SCALEWAY_ACCESS_KEY_ID'),
+          secretAccessKey: env('SCALEWAY_ACCESS_SECRET'),
+        },
+        region: env('SCALEWAY_REGION'), // e.g "fr-par"
+        endpoint: env('SCALEWAY_ENDPOINT'), // e.g. "https://s3.fr-par.scw.cloud"
+        params: {
+          Bucket: env('SCALEWAY_BUCKET'),
+        },
+      },
     },
-  }, 
+  },
 });
