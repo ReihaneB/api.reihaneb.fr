@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: reihaneb-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "1338:1337"
+    networks:
+      - reihaneb-network
+    environment:
+      # Strapi Core
+      HOST: 0.0.0.0
+      PORT: 1337
+      NODE_ENV: production
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT}
+      JWT_SECRET: ${JWT_SECRET}
+      # Database (PostgreSQL)
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: reihaneb-postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_SSL: ${DATABASE_SSL:-false}
+      # Scaleway S3 Provider
+      SCALEWAY_ACCESS_KEY_ID: ${SCALEWAY_ACCESS_KEY_ID}
+      SCALEWAY_ACCESS_SECRET: ${SCALEWAY_ACCESS_SECRET}
+      SCALEWAY_ENDPOINT: ${SCALEWAY_ENDPOINT}
+      SCALEWAY_ENDPOINT_BUCKET: ${SCALEWAY_ENDPOINT_BUCKET}
+      SCALEWAY_REGION: ${SCALEWAY_REGION}
+      SCALEWAY_BUCKET: ${SCALEWAY_BUCKET}
+
+networks:
+  reihaneb-network:
+    external: true
